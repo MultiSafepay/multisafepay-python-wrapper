@@ -6,8 +6,9 @@ import json
 
 
 class Client:
-    def __init__(self, api_key=None):
-        self.api_url = 'https://testapi.multisafepay.com/v1/json'
+    def __init__(self, modus=None, api_key=None):
+        self.modus = modus
+        self.api_url = None
         self.api_key = api_key
         self.order = Orders(self)
         self.paymentmethod = PaymentMethod
@@ -15,6 +16,15 @@ class Client:
 
     def set_api_key(self, api_key):
         self.api_key = self.validate_api_key(api_key)
+
+    def set_modus(self, modus):
+        self.modus = modus
+        if self.modus is 'TEST':
+            self.api_url = 'https://testapi.multisafepay.com/v1/json'
+        elif self.modus is 'LIVE':
+            self.api_url = 'https://api.multisafepay.com/v1/json'
+        else:
+            raise ValueError('Invalid API mode, needs to be LIVE or TEST')
 
     @staticmethod
     def validate_api_key(api_key):
@@ -24,10 +34,11 @@ class Client:
                              "characters long".format(api_key=api_key))
         return api_key
 
-    def execute_http_call(self, http_method, endpoint, data=None,**kwargs):
+    def execute_http_call(self, http_method, endpoint, data=None, **kwargs):
+        print(self.api_url)
         response = requests.request(http_method,
                                     url='{0}/{1}'.format(self.api_url, endpoint),
                                     headers={'api_key':'{api_key}'.format(
-                                        api_key=self.api_key)}, json=data,**kwargs)
+                                        api_key=self.api_key)}, json=data, **kwargs)
         json_data = json.loads(response.text)
         return json_data

@@ -5,18 +5,12 @@ class Gateways:
         self.method = 'GET'
 
     def gateway(self, gatewayid):
-        self.endpoint = '{0}/{1}'.format(self.endpoint,gatewayid)
-        return self.msp_client.execute_http_call(self.method, self.endpoint)
+        endpoint = '{0}/{1}'.format(self.endpoint,gatewayid)
+        return self.msp_client.execute_http_call(self.method, endpoint)
 
-    def gateways(self, country=None, currency=None, amount=None, include=None):
-        if country or currency or amount or include:
-            self.endpoint = '{0}?'.format(self.endpoint)
-        if country:
-            self.endpoint = '{0}country={1}'.format(self.endpoint, country)
-        if currency:
-            self.endpoint = '{0}&currency={1}'.format(self.endpoint, currency)
-        if amount:
-            self.endpoint = '{0}&amount={1}'.format(self.endpoint, amount)
-        if include:
-            self.endpoint = '{0}&include={1}'.format(self.endpoint, include)
-        return self.msp_client.execute_http_call(self.method, self.endpoint)
+    def allgateways(self, *args):
+        if not args:
+            endpoint = self.endpoint
+        else:
+            endpoint = '{0}{1}'.format(self.endpoint, *args)
+        return self.msp_client.execute_http_call(self.method, endpoint)

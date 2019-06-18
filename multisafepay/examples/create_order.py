@@ -1,13 +1,15 @@
 from multisafepay.client import Client
 
 msp_client = Client()
-#fill in TEST API key here
-msp_client.set_api_key('')
+# Here you can set the mode to TEST or LIVE based on the API you want to use
+msp_client.set_modus('TEST')
+msp_client.set_api_key('REPLACE WITH API KEY')
 
+# The following code will create a iDEAL order
 print(msp_client.order.create({
     "type": "redirect",
     "order_id": "my-order-id-1",
-    "gateway": msp_client.paymentmethod.EPS,
+    "gateway": msp_client.paymentmethod.IDEAL,
     "currency": "EUR",
     "amount": "1000",
     "description": "Test Order Description",
@@ -21,4 +23,3 @@ print(msp_client.order.create({
     }
 }))
 
-print(msp_client.gateways.gateways(country='NL',currency='100'))
