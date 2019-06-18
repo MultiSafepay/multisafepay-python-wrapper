@@ -1,4 +1,6 @@
 from multisafepay.resources.orders import Orders
+from multisafepay.objects.paymentmethod import PaymentMethod
+from multisafepay.resources.gateways import Gateways
 import requests
 import json
 
@@ -8,6 +10,8 @@ class Client:
         self.api_url = 'https://testapi.multisafepay.com/v1/json'
         self.api_key = api_key
         self.order = Orders(self)
+        self.paymentmethod = PaymentMethod
+        self.gateways = Gateways(self)
 
     def set_api_key(self, api_key):
         self.api_key = self.validate_api_key(api_key)

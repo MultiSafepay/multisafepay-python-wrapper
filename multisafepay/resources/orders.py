@@ -4,9 +4,8 @@ class Orders:
         self.msp_client = client
 
     def create(self, data):
-        endpoint = self.endpoint
         method = 'POST'
-        return self.msp_client.execute_http_call(method, endpoint, data)
+        return self.msp_client.execute_http_call(method, self.endpoint, data)
 
     def get(self, order_id):
         endpoint = '{0}/{1}'.format(self.endpoint, order_id)
