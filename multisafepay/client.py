@@ -35,7 +35,6 @@ class Client:
         return api_key
 
     def execute_http_call(self, http_method, endpoint, data=None, **kwargs):
-        print(self.api_url)
         response = requests.request(http_method,
                                     url='{0}/{1}'.format(self.api_url, endpoint),
                                     headers={'api_key':'{api_key}'.format(
