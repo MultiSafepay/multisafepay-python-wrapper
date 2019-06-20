@@ -20,6 +20,7 @@ class PaymentMethod:
     SANTANDER = 'SANTANDER'
     SOFORT = 'DIRECTBANK'
     TRUSTLY = 'TRUSTLY'
+    PAYAFTER = 'PAYAFTER'
 
 
 
