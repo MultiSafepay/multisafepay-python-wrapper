@@ -8,7 +8,7 @@ msp_client.set_api_key('REPLACE WITH API KEY')
 # The following code will create a iDEAL order with ING as issuer
 # Issuers can only be used with iDEAL
 print(msp_client.order.create({
-    "type": "direct",
+    "type": msp_client.ordertype.REDIRECT,
     "order_id": "My-order-id-5",
     "currency": "EUR",
     "amount": 1000,

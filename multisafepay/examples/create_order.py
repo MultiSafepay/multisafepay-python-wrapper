@@ -7,7 +7,7 @@ msp_client.set_api_key('REPLACE WITH API KEY')
 
 # The following code will create a iDEAL order
 print(msp_client.order.create({
-    "type": "redirect",
+    "type": msp_client.ordertype.REDIRECT,
     "order_id": "my-order-id-1",
     "gateway": msp_client.paymentmethod.IDEAL,
     "currency": "EUR",

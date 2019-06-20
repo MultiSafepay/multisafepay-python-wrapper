@@ -1,8 +1,9 @@
 from multisafepay.resources.orders import Orders
-from multisafepay.objects.paymentmethod import PaymentMethod
-from multisafepay.objects.issuers import Issuer
 from multisafepay.resources.gateways import Gateways
 from multisafepay.resources.ideal_issuers import Issuers
+from multisafepay.objects.paymentmethod import PaymentMethod
+from multisafepay.objects.issuers import Issuer
+from multisafepay.objects.ordertype import OrderType
 import requests
 import json
 
@@ -14,6 +15,7 @@ class Client:
         self.api_key = api_key
         self.paymentmethod = PaymentMethod
         self.issuer = Issuer
+        self.ordertype = OrderType
         self.order = Orders(self)
         self.gateways = Gateways(self)
         self.ideal_issuers = Issuers(self)
