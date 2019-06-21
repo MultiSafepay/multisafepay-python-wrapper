@@ -24,7 +24,7 @@ Creating a test order
 ```
 # The following code will create a iDEAL order
 print(msp_client.order.create({
-    "type": msp_client.ordertype.DIRECT,
+    "type": msp_client.ordertype.REDIRECT,
     "order_id": "my-order-id-1",
     "gateway": msp_client.paymentmethod.IDEAL,
     "currency": "EUR",
