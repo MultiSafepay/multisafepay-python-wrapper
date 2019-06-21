@@ -26,7 +26,7 @@ Creating a test order
 print(msp_client.order.create({
     "type": msp_client.ordertype.DIRECT,
     "order_id": "my-order-id-1",
-    "gateway": msp_client.paymentmethod.KLARNA,
+    "gateway": msp_client.paymentmethod.IDEAL,
     "currency": "EUR",
     "amount": "1000",
     "description": "Test Order Description",
