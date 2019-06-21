@@ -21,7 +21,7 @@ msp_client.set_modus('TEST')
 msp_client.set_api_key('REPLACE WITH API KEY')
 ```
 Creating a test order 
-```
+```python
 # The following code will create a iDEAL order
 print(msp_client.order.create({
     "type": msp_client.ordertype.REDIRECT,
