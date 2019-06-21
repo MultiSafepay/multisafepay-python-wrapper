@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://www.multisafepay.com/img/multisafepaylogo.svg" width="400px" position="center">
 </p>
+
 # Python wrapper for the MultiSafepay API
 This wrapper simplifies working with the MultiSafepay API and allows you to integrate MultiSafepay within your Python application.
 ## About MultiSafepay ##
