@@ -1,14 +1,15 @@
 from setuptools import find_packages, setup
-version = "1.0.0"
+version = "0.0.15"
 
 
 def readme():
     with open("README.md") as f:
+        print(f.read())
         return f.read()
 
 
 setup(
-    name='multisafepay-python-wrapper',
+    name='multisafepay',
     version=version,
     license='MIT',
     long_description=readme(),
@@ -25,6 +26,6 @@ setup(
     classifiers=[
         'Programming Language :: Python :: 3',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT Licence',
+        'License :: OSI Approved :: MIT License',
     ],
 )
