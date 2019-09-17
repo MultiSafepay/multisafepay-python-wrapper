@@ -1,11 +1,7 @@
-multisafepay/resources/__pycache__/orders.cpython-37.pyc
-multisafepay/resources/__pycache__/__init__.cpython-37.pyc
-multisafepay/__pycache__/__init__.cpython-37.pyc
-.idea/workspace.xml
-.idea/untitled.iml
-.idea/modules.xml
-.idea/misc.xml
-.idea/encodings.xml
+/build
+/dist
+/*.egg-info
+/.eggs
 *.pyc
 *.xml
 *.iml
