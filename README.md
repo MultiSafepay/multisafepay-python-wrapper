@@ -11,7 +11,12 @@ MultiSafepay is a collecting payment service provider which means we take care o
 - Python 3.6 or higher
 - Packages: requests
 ## Installation
-Clone this git repository and make sure you meet the requirements, installation through pip will be added in a future release. 
+Clone this git repository or install the package with pip. 
+
+The following command can be used to install the latest released version of the client:
+```python
+pip install multisafepay
+```
 ## Usage
 Setup the client for testing
 ```python
