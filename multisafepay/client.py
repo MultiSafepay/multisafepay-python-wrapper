@@ -25,9 +25,9 @@ class Client:
 
     def set_modus(self, modus):
         self.modus = modus
-        if self.modus is 'TEST':
+        if self.modus == 'TEST':
             self.api_url = 'https://testapi.multisafepay.com/v1/json'
-        elif self.modus is 'LIVE':
+        elif self.modus == 'LIVE':
             self.api_url = 'https://api.multisafepay.com/v1/json'
         else:
             raise ValueError('Invalid API mode, needs to be LIVE or TEST')
